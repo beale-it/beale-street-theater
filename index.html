@@ -1882,6 +1882,58 @@
                     </div>
                 </div>
 
+                <!-- MODULE 9: Shared Resources -->
+                <div id="module-9" class="portal-content" style="background: none; padding: 0;">
+                    <div class="bg-white rounded-3xl p-6 md:p-8 shadow-sm border border-slate-200 mb-8 flex flex-col md:flex-row md:items-center justify-between gap-6">
+                        <div class="space-y-2">
+                            <span class="inline-block px-3 py-1 bg-teal-100 text-teal-700 text-[10px] font-black rounded-full uppercase tracking-widest">Workspace</span>
+                            <h2 class="text-3xl font-black text-slate-900 tracking-tight leading-none">Shared Resources</h2>
+                            <p class="text-slate-600 max-w-xl text-sm font-medium leading-relaxed">Central repository for Drive files, document templates, CSV structures, and staff training materials.</p>
+                        </div>
+                        <div class="hidden md:flex w-16 h-16 rounded-2xl bg-teal-50 items-center justify-center text-teal-600">
+                            <i class="fas fa-folder-open text-3xl"></i>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 pb-12">
+                        <!-- Google Drive -->
+                        <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 hover:border-teal-500 transition-colors cursor-pointer group">
+                            <div class="flex items-center gap-4 mb-3">
+                                <i class="fab fa-google-drive text-2xl text-slate-400 group-hover:text-teal-600 transition-colors"></i>
+                                <h3 class="text-lg font-bold text-slate-900">Google Drive</h3>
+                            </div>
+                            <p class="text-sm text-slate-600 mb-4">Access shared folders, media uploads, and collaborative documents.</p>
+                            <a href="#" class="text-teal-600 text-sm font-bold hover:underline">Open Drive &rarr;</a>
+                        </div>
+                        <!-- Document Library -->
+                        <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 hover:border-teal-500 transition-colors cursor-pointer group">
+                            <div class="flex items-center gap-4 mb-3">
+                                <i class="fas fa-file-alt text-2xl text-slate-400 group-hover:text-teal-600 transition-colors"></i>
+                                <h3 class="text-lg font-bold text-slate-900">Document Library</h3>
+                            </div>
+                            <p class="text-sm text-slate-600 mb-4">W-9s, tax exempt forms, theater policy PDFs, and branding guidelines.</p>
+                            <a href="#" class="text-teal-600 text-sm font-bold hover:underline">View Documents &rarr;</a>
+                        </div>
+                        <!-- CSV Collections -->
+                        <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 hover:border-teal-500 transition-colors cursor-pointer group">
+                            <div class="flex items-center gap-4 mb-3">
+                                <i class="fas fa-table text-2xl text-slate-400 group-hover:text-teal-600 transition-colors"></i>
+                                <h3 class="text-lg font-bold text-slate-900">CSV Templates</h3>
+                            </div>
+                            <p class="text-sm text-slate-600 mb-4">Spreadsheet templates formatted for Duda internal collections/dynamic pages.</p>
+                            <a href="#" class="text-teal-600 text-sm font-bold hover:underline">Download Templates &rarr;</a>
+                        </div>
+                        <!-- Training Material -->
+                        <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 hover:border-teal-500 transition-colors cursor-pointer group">
+                            <div class="flex items-center gap-4 mb-3">
+                                <i class="fas fa-graduation-cap text-2xl text-slate-400 group-hover:text-teal-600 transition-colors"></i>
+                                <h3 class="text-lg font-bold text-slate-900">Training Material</h3>
+                            </div>
+                            <p class="text-sm text-slate-600 mb-4">Onboarding videos, process walkthroughs, and Ludus box office instructions.</p>
+                            <a href="#" class="text-teal-600 text-sm font-bold hover:underline">Access Training &rarr;</a>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </main>
     </div>
@@ -1900,7 +1952,8 @@
             { id: 5, title: 'Show Cards', subtitle: 'Component', icon: 'fa-ticket-alt' },
             { id: 6, title: 'Buttons', subtitle: 'Component', icon: 'fa-mouse-pointer' },
             { id: 7, title: 'Section Headings', subtitle: 'Component', icon: 'fa-heading' },
-            { id: 8, title: 'Icons', subtitle: 'Component', icon: 'fa-icons' }
+            { id: 8, title: 'Icons', subtitle: 'Component', icon: 'fa-icons' },
+            { id: 9, title: 'Shared Resources', subtitle: 'Drive & Docs', icon: 'fa-folder-open' }
         ];
         let activeModule = 0;
         function renderSidebar() {
@@ -2100,6 +2153,150 @@
             setTimeout(() => toast.style.opacity = '0', 2000);
         }
     
+    </script>
+    <script>
+        // Copy Code & SVG Download logic
+        function initComponentTools() {
+            const explanationStr = `
+                <div class="bg-slate-800 text-slate-300 p-4 rounded-xl mb-6 text-sm flex gap-4 items-start shadow-inner">
+                    <i class="fas fa-info-circle text-teal-400 mt-1"></i>
+                    <div>
+                        <strong class="text-white block mb-1">Duda Implementation Guide:</strong>
+                        To use these components in Duda, add an <strong>HTML Widget</strong> to your page and paste the code entirely. 
+                        For dynamic content (like Show Cards), you can replace static text with <code>{{Collection_Field_Name}}</code> 
+                        after binding the widget to a Data Collection.
+                    </div>
+                </div>
+            `;
+
+            [3, 4, 5, 6, 7].forEach(id => {
+                const mod = document.getElementById('module-' + id);
+                if(mod && mod.querySelector('.component-preview')) {
+                    mod.insertBefore(document.createRange().createContextualFragment(explanationStr), mod.querySelector('.component-preview'));
+                }
+            });
+
+            document.querySelectorAll('.component-preview').forEach(preview => {
+                const elements = preview.querySelectorAll('section, .bst-card, .bst-section-header, .bst-btn:not(.icon-item .bst-btn)');
+                elements.forEach(el => {
+                    if(el.closest('.icon-showcase')) return;
+                    
+                    const ogPosition = window.getComputedStyle(el).position;
+                    if(ogPosition === 'static') el.style.position = 'relative';
+
+                    const toolbar = document.createElement('div');
+                    toolbar.className = 'absolute top-2 right-2 flex gap-2 opacity-0 hover:opacity-100 transition-opacity bg-slate-900/90 p-2 rounded-lg backdrop-blur z-40 shadow-xl border border-slate-700';
+                    
+                    el.addEventListener('mouseenter', () => toolbar.style.opacity = '1');
+                    el.addEventListener('mouseleave', () => toolbar.style.opacity = '0');
+
+                    const copyBtn = document.createElement('button');
+                    copyBtn.innerHTML = '<i class="fas fa-code mr-1"></i> Copy Code';
+                    copyBtn.className = 'text-xs text-white bg-teal-600 hover:bg-teal-500 px-3 py-1.5 rounded transition-colors font-bold shadow';
+                    copyBtn.onclick = (e) => {
+                        e.preventDefault();
+                        e.stopPropagation();
+                        // Clone the element to remove the toolbar from the copied code
+                        const clone = el.cloneNode(true);
+                        clone.removeChild(clone.lastChild); // Assuming toolbar is the last child
+                        if(ogPosition === 'static') clone.style.position = '';
+                        copyToClipboard(clone.outerHTML);
+                    };
+                    
+                    toolbar.appendChild(copyBtn);
+                    el.appendChild(toolbar);
+                });
+            });
+
+            document.querySelectorAll('.icon-item').forEach(item => {
+                item.style.position = 'relative';
+                item.style.paddingBottom = '5rem'; // Give room for buttons
+                item.style.display = 'flex';
+                item.style.flexDirection = 'column';
+                item.style.alignItems = 'center';
+                
+                const svg = item.querySelector('svg');
+                if(!svg) return;
+
+                const wrapper = document.createElement('div');
+                wrapper.className = 'absolute bottom-3 left-0 w-full px-3 flex flex-col gap-1.5';
+
+                const dlWrapper = document.createElement('div');
+                dlWrapper.className = 'flex gap-1 w-full';
+
+                ['SVG', 'PNG', 'WEBP'].forEach(format => {
+                    const btn = document.createElement('button');
+                    btn.innerHTML = format;
+                    btn.className = 'text-[9px] bg-teal-900/50 text-teal-400 hover:bg-teal-500 hover:text-white py-1 rounded transition-colors font-bold flex-1 border border-teal-800/50';
+                    btn.title = `Download physical ${format} for designs`;
+                    btn.onclick = () => downloadIcon(svg, format, item.querySelector('.icon-name').innerText);
+                    dlWrapper.appendChild(btn);
+                });
+
+                const copyBtn = document.createElement('button');
+                copyBtn.innerHTML = '<i class="fas fa-code"></i> Copy SVG Code';
+                copyBtn.className = 'text-[10px] w-full bg-slate-800 text-slate-300 hover:bg-slate-700 py-1.5 rounded transition-colors font-bold border border-slate-700';
+                copyBtn.title = `Copy SVGs for HTML widgets in Duda`;
+                copyBtn.onclick = () => copyToClipboard(svg.outerHTML);
+
+                wrapper.appendChild(dlWrapper);
+                wrapper.appendChild(copyBtn);
+                item.appendChild(wrapper);
+            });
+        }
+
+        // Helper override because copyToClipboard is missing from this scope or uses showToast
+        function copyToClipboard(text) {
+            const el = document.createElement('textarea');
+            el.value = text;
+            document.body.appendChild(el);
+            el.select();
+            document.execCommand('copy');
+            document.body.removeChild(el);
+            showToast(); // Calling existing toast function
+        }
+
+        function downloadIcon(svgEl, format, name) {
+            const svgData = new XMLSerializer().serializeToString(svgEl);
+            const fileName = name.trim().toLowerCase().replace(/[^a-z0-9]+/g, '-') + '.' + format.toLowerCase();
+            
+            if(format === 'SVG') {
+                const blob = new Blob([svgData], {type: 'image/svg+xml;charset=utf-8'});
+                const url = URL.createObjectURL(blob);
+                triggerDownload(url, fileName);
+            } else {
+                const canvas = document.createElement('canvas');
+                const ctx = canvas.getContext('2d');
+                const img = new Image();
+                const svgBlob = new Blob([svgData], {type: 'image/svg+xml;charset=utf-8'});
+                const url = URL.createObjectURL(svgBlob);
+                
+                img.onload = function() {
+                    canvas.width = 512;
+                    canvas.height = 512;
+                    ctx.clearRect(0, 0, canvas.width, canvas.height);
+                    ctx.drawImage(img, 0, 0, 512, 512);
+                    URL.revokeObjectURL(url);
+                    
+                    const mime = format === 'PNG' ? 'image/png' : 'image/webp';
+                    const imgData = canvas.toDataURL(mime, 1.0);
+                    triggerDownload(imgData, fileName);
+                };
+                img.src = url;
+            }
+        }
+
+        function triggerDownload(url, filename) {
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = filename;
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+        }
+
+        document.addEventListener('DOMContentLoaded', initComponentTools);
+        setTimeout(initComponentTools, 100);
     </script>
 </body>
 </html>
