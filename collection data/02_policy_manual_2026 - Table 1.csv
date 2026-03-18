@@ -1,0 +1,6 @@
+Action Type,Policy Rule,Prerequisites
+Ticket Purchases,All sales are final.,Secured via the Ludus processing portal.
+Refund Requests,Non-refundable unless a performance is canceled.,Order name and transaction ID must be provided.
+Ticket Exchanges,Permitted based on seat availability.,Minimum 48-hour advance notice required.
+Unused Tickets,May be converted into a tax-deductible donation.,"Request ""Pay-It-Forward"" program transfer."
+Seating Guarantee,Admission to the house is not guaranteed for late arrivals.,Subject to House Manager discretion.

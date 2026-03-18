@@ -1,76 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Adopt A Seat - Beale Street Theater</title>
-  <link rel="stylesheet" href="../bst-theme.css">
-  <style>
-    /* 
-      Duda Widget CSS 
-      Pasted into the CSS tab. We rely heavily on global bst-theme.css classes,
-      but include widget-specific overrides here per Phase 1 Launch Rules.
-    */
-    
-    /* Override bst-hero-content to use flex as per Phase 1 Rule #2 */
-    .bst-adopt-seat-widget .bst-hero-content {
-      display: flex;
-      flex-direction: row-reverse;
-      gap: 3rem;
-      align-items: center;
-    }
-    
-    .bst-adopt-seat-widget .hero-text-wrapper,
-    .bst-adopt-seat-widget .hero-image-wrapper {
-      flex: 1;
-    }
-
-    /* At 768px force column and text-center per Rule #2 */
-    @media (max-width: 768px) {
-      .bst-adopt-seat-widget .bst-hero-content {
-        flex-direction: column;
-        text-align: center;
-      }
-      
-      .bst-adopt-seat-widget .trust-block {
-        justify-content: center;
-      }
-    }
-
-    /* Component-specific Styles for Trust Blocks */
-    .bst-adopt-seat-widget .bst-trust-blocks {
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-      margin-bottom: 2.5rem;
-      background-color: var(--bst-stage-black);
-      padding: 1.5rem;
-      border-radius: var(--bst-curve);
-      border: 2px solid var(--bst-border-teal-transparent);
-      border-left: none;
-      box-shadow: var(--bst-shadow-right);
-    }
-
-    .bst-adopt-seat-widget .trust-block {
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
-    }
-
-    .bst-adopt-seat-widget .trust-icon {
-      color: var(--bst-neon-teal);
-      font-weight: bold;
-      font-size: 1.25rem;
-    }
-  </style>
-</head>
-<body>
-
-  <!-- 
-    DUDA HTML WIDGET CODE BELOW
-    Paste this block into the HTML tab of the Duda custom widget
-  -->
-  <script type="application/ld+json">
+<!-- 
+  DUDA HTML WIDGET CODE BELOW
+-->
+<script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "DonateAction",
@@ -133,6 +64,3 @@
       </div>
     </section>
   </div>
-
-</body>
-</html>
