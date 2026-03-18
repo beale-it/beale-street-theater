@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Audio Visual Equipment Fund - Beale Street Theater</title>
+  <link rel="stylesheet" href="../bst-theme.css">
+  <style>
+    .bst-support-widget .bst-hero-content {
+      display: flex;
+      flex-direction: row-reverse;
+      gap: 3rem;
+      align-items: center;
+    }
+    .bst-support-widget .hero-text-wrapper,
+    .bst-support-widget .hero-image-wrapper {
+      flex: 1;
+    }
+    @media (max-width: 768px) {
+      .bst-support-widget .bst-hero-content {
+        flex-direction: column;
+        text-align: center;
+      }
+      .bst-support-widget .trust-block {
+        justify-content: center;
+      }
+    }
+    .bst-support-widget .bst-trust-blocks {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      margin-bottom: 2.5rem;
+      background-color: var(--bst-stage-black);
+      padding: 1.5rem;
+      border-radius: var(--bst-curve);
+      border: 2px solid var(--bst-border-teal-transparent);
+      border-left: none;
+      box-shadow: var(--bst-shadow-right);
+    }
+    .bst-support-widget .trust-block {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+    .bst-support-widget .trust-icon {
+      color: var(--bst-neon-teal);
+      font-weight: bold;
+      font-size: 1.25rem;
+    }
+  </style>
+</head>
+<body>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "DonateAction",
+    "name": "Audio Visual Equipment Fund",
+    "description": "Help fund professional audio/visual equipment for Beale Street Theater. Every donation helps bring high-quality productions to Kingman.",
+    "recipient": {
+      "@type": "Organization",
+      "name": "Beale Street Theater",
+      "url": "https://bealestreettheater.com"
+    }
+  }
+  </script>
+
+  <div class="bst-support-widget" role="region" aria-label="AV Equipment Fund Support Page">
+    <section class="bst-hero" aria-labelledby="hero-title">
+      <div class="bst-hero-content">
+        <div class="hero-text-wrapper" tabindex="0">
+          <h1 id="hero-title" class="bst-heading-xl bst-mb-md">Fund Our Equipment</h1>
+          
+          <p class="bst-body-lg bst-mb-sm" style="font-size: 1.15rem; color: var(--bst-text-primary); font-weight: 600;">
+            Fund the Audio/Visual Equipment we need to deliver high-quality productions.
+          </p>
+          
+          <p class="bst-body bst-mb-lg" style="font-size: 1.15rem;">
+            Beale Street Theater is almost ready to shine! We're fundraising for the professional Audio/Visual equipment needed to deliver high-quality productions that our community deserves. Every microphone, spotlight, and projector helps bring stories to life. To give you the best experience possible here at Beale Street Theater, we need your support to acquire professional-grade equipment.
+          </p>
+          
+          <div class="bst-trust-blocks" role="list" aria-label="Benefits">
+            <div class="trust-block" role="listitem">
+              <span class="trust-icon" aria-hidden="true">✓</span>
+              <span class="bst-body" style="font-size: 1.15rem;">Tax-deductible donation</span>
+            </div>
+            <div class="trust-block" role="listitem">
+              <span class="trust-icon" aria-hidden="true">✓</span>
+              <span class="bst-body" style="font-size: 1.15rem;">Recognition in programs</span>
+            </div>
+            <div class="trust-block" role="listitem">
+              <span class="trust-icon" aria-hidden="true">✓</span>
+              <span class="bst-body" style="font-size: 1.15rem;">Support professional productions</span>
+            </div>
+          </div>
+
+          <div class="hero-action">
+            <a href="/support/av-equipment" class="bst-btn bst-btn-primary bst-btn-lg" role="button" aria-label="Donate to the Audio Visual Equipment Fund">
+              Support Equipment Fund
+            </a>
+          </div>
+        </div>
+        
+        <div class="hero-image-wrapper">
+          <img src="https://images.unsplash.com/photo-1520697830682-83de6801caeb?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Professional theater lighting and sound equipment" class="bst-card-image" style="height: auto; aspect-ratio: 4/3; margin-bottom: 0;" loading="lazy" />
+        </div>
+      </div>
+    </section>
+  </div>
+
+</body>
+</html>

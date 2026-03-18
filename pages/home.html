@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home - Beale Street Theater</title>
+  <link rel="stylesheet" href="../bst-theme.css">
+</head>
+<body>
+
+  <!-- 
+    DUDA HTML WIDGET CODE BELOW
+    Paste this block into the HTML tab of the Duda custom widget
+  -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Beale Street Theater",
+    "url": "https://bealestreettheater.com",
+    "description": "Live theater and concerts in Kingman, AZ on Historic Route 66."
+  }
+  </script>
+
+  <div class="bst-home-widget bst-bg-transparent">
+    
+    <!-- Hero Section (Left-Image / Right-Text) -->
+    <section class="bst-hero" aria-labelledby="hero-title">
+      <div class="bst-hero-content" style="display: flex; flex-direction: row-reverse; gap: 3rem; align-items: center;">
+        
+        <!-- Text Content (Rendered Right due to row-reverse) -->
+        <div class="hero-text-wrapper" style="flex: 1;" tabindex="0">
+          <span class="bst-label bst-mb-sm" style="display: block;">Welcome to Kingman's Stage</span>
+          <h1 id="hero-title" class="bst-heading-xl bst-mb-xs">Live Theater and Concerts in Kingman, AZ</h1>
+          <h2 class="bst-heading-md bst-mb-md" style="color: var(--bst-neon-teal);">Historic Route 66 since 1939</h2>
+          
+          <p class="bst-body-lg bst-mb-lg">
+            Beale Street Theater is open and ready for Kingman. Live performances, community classes, and concerts. We’re a community theater and live event venue dedicated to bringing captivating productions to life.
+          </p>
+          
+          <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+            <a href="/get-tickets" class="bst-btn bst-btn-primary bst-btn-lg">Get Tickets</a>
+            <a href="/about" class="bst-btn bst-btn-secondary bst-btn-lg">Our Story</a>
+          </div>
+        </div>
+        
+        <!-- Image Content (Rendered Left due to row-reverse) -->
+        <div class="hero-image-wrapper" style="flex: 1;">
+          <img src="https://images.unsplash.com/photo-1507676184212-d0330a156738?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Beale Street Theater Marquee" class="bst-card-image" style="height: auto; aspect-ratio: 4/3; margin-bottom: 0;" loading="lazy" />
+        </div>
+        
+      </div>
+    </section>
+
+    <!-- Now Playing Section (Next 7 Days) -->
+    <section class="bst-section">
+      <div class="bst-section-header">
+        <h2 class="bst-section-title">Now Playing</h2>
+        <p class="bst-section-subtitle">Shows in the Next 7 Days</p>
+      </div>
+      
+      <div class="bst-grid bst-grid-4">
+        <!-- Show 1 -->
+        <a href="https://bst.ludus.com/200512726" class="bst-card" style="text-decoration: none; display: block;">
+          <img src="https://irp.cdn-website.com/a2e2bd3e/dms3rep/multi/bst-bsyt-2026-season-posters-4-bst-cecilia-260316_optimized+%281%29.webp" alt="Cecilia" class="bst-card-image">
+          <span class="bst-card-category">Concert Series</span>
+          <h3 class="bst-card-title">Cecilia</h3>
+          <p class="bst-card-meta">March 17, 2026 • 7:00 PM</p>
+        </a>
+        
+        <!-- Show 2 -->
+        <a href="https://bst.ludus.com/200512725" class="bst-card" style="text-decoration: none; display: block;">
+          <img src="https://irp.cdn-website.com/a2e2bd3e/dms3rep/multi/bst-bsyt-2026-season-posters-14_optimized.webp" alt="Alash" class="bst-card-image">
+          <span class="bst-card-category">Concert Series</span>
+          <h3 class="bst-card-title">Alash</h3>
+          <p class="bst-card-meta">March 18, 2026 • 7:00 PM</p>
+        </a>
+
+        <!-- Show 3 -->
+        <a href="https://bst.ludus.com/200515931" class="bst-card" style="text-decoration: none; display: block;">
+          <img src="https://irp.cdn-website.com/a2e2bd3e/dms3rep/multi/10_optimized+%281%29-3b3934f7.webp" alt="Catch A Wave Beach Boys Show" class="bst-card-image">
+          <span class="bst-card-category">Concert Series</span>
+          <h3 class="bst-card-title">Catch A Wave</h3>
+          <p class="bst-card-meta">March 20, 2026 • 7:00 PM</p>
+        </a>
+        
+        <!-- Show 4 -->
+        <a href="https://bst.ludus.com/200515930" class="bst-card" style="text-decoration: none; display: block;">
+          <img src="https://irp.cdn-website.com/a2e2bd3e/dms3rep/multi/9_optimized+%281%29-55739a1c.webp" alt="Paperback Writer" class="bst-card-image">
+          <span class="bst-card-category">Concert Series</span>
+          <h3 class="bst-card-title">Paperback Writer</h3>
+          <p class="bst-card-meta">March 21, 2026 • 7:00 PM</p>
+        </a>
+      </div>
+      <div class="bst-text-center" style="margin-top: 2rem;">
+        <a href="/get-tickets" class="bst-btn bst-btn-secondary bst-btn-md">View Full Calendar</a>
+      </div>
+    </section>
+
+    <!-- The Reviews Are In! -->
+    <section class="bst-section" style="background-color: var(--bst-bg-card);">
+      <div class="bst-section-header">
+        <h2 class="bst-section-title">The Reviews Are In!</h2>
+        <p class="bst-section-subtitle">What Kingman is Saying</p>
+      </div>
+      
+      <div class="bst-grid bst-grid-3">
+        <!-- Review 1 -->
+        <div class="bst-card" style="display: flex; flex-direction: column;">
+          <div style="color: #FFD700; font-size: 1.25rem; margin-bottom: 0.5rem;">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p class="bst-body bst-mb-sm" style="flex: 1;">"Very nice venue, the staff were very welcoming... I would definitely return for more music shows like that."</p>
+          <p class="bst-label">— Lilly</p>
+        </div>
+        
+        <!-- Review 2 -->
+        <div class="bst-card" style="display: flex; flex-direction: column;">
+          <div style="color: #FFD700; font-size: 1.25rem; margin-bottom: 0.5rem;">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p class="bst-body bst-mb-sm" style="flex: 1;">"All completely remodeled and open to the public. We saw the production and it was fantastic!"</p>
+          <p class="bst-label">— Jim Marsden</p>
+        </div>
+
+        <!-- Review 3 -->
+        <div class="bst-card" style="display: flex; flex-direction: column;">
+          <div style="color: #FFD700; font-size: 1.25rem; margin-bottom: 0.5rem;">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p class="bst-body bst-mb-sm" style="flex: 1;">"This has transformed into a beautiful performance theater. The walls have large sound-dampening panels that make it great for all kinds of performances."</p>
+          <p class="bst-label">— Alexander Sol</p>
+        </div>
+        
+        <!-- Review 4 -->
+        <div class="bst-card" style="display: flex; flex-direction: column;">
+          <div style="color: #FFD700; font-size: 1.25rem; margin-bottom: 0.5rem;">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p class="bst-body bst-mb-sm" style="flex: 1;">"Beautiful renovated theater. Excellent shows with reasonable prices!"</p>
+          <p class="bst-label">— Donna Downing</p>
+        </div>
+
+        <!-- Review 5 -->
+        <div class="bst-card" style="display: flex; flex-direction: column;">
+          <div style="color: #FFD700; font-size: 1.25rem; margin-bottom: 0.5rem;">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p class="bst-body bst-mb-sm" style="flex: 1;">"Amazing! I love all the shows at the Beale Street Theater! And the V.I.P lounge is amazing!"</p>
+          <p class="bst-label">— Emma Downing</p>
+        </div>
+
+        <!-- Review 6 -->
+        <div class="bst-card" style="display: flex; flex-direction: column;">
+          <div style="color: #FFD700; font-size: 1.25rem; margin-bottom: 0.5rem;">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p class="bst-body bst-mb-sm" style="flex: 1;">"Support local artists!! This theatre is active. There are many talented people that work to make it a great place for entertainment."</p>
+          <p class="bst-label">— Jon Ritch</p>
+        </div>
+
+        <!-- Review 7 -->
+        <div class="bst-card" style="display: flex; flex-direction: column;">
+          <div style="color: #FFD700; font-size: 1.25rem; margin-bottom: 0.5rem;">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p class="bst-body bst-mb-sm" style="flex: 1;">"I was absolutely in thralled by my experience in the theater. Absolutely amazing. Two thumbs up."</p>
+          <p class="bst-label">— Fred Jordan</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Join In Section -->
+    <section class="bst-section">
+      <div class="bst-section-header">
+        <h2 class="bst-section-title">Join In</h2>
+      </div>
+      <p class="bst-body-lg bst-text-center bst-mb-xl" style="max-width: 800px; margin-left: auto; margin-right: auto;">
+        We are truly stronger together. Join us and the Kingman community in building lasting relationships and the next generation culture and leaders.
+      </p>
+
+      <div class="bst-grid bst-grid-4">
+        <!-- Join Item 1 -->
+        <a href="/support/pay-it-forward" class="bst-card bst-text-center" style="text-decoration: none;">
+          <span class="bst-label">Give Tickets</span>
+          <div style="margin: 1rem 0; color: var(--bst-neon-teal);">
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 12V8H6a2 2 0 0 1-2-2c0-1.1.9-2 2-2h12v4"/><path d="M4 6v12c0 1.1.9 2 2 2h14v-4"/><path d="M18 12a2 2 0 0 0-2 2c0 1.1.9 2 2 2h4v-4h-4z"/></svg>
+          </div>
+          <h3 class="bst-heading-sm bst-mb-xs">Pay-It-Forward</h3>
+          <div style="font-size: 1.5rem; font-weight: 700; color: var(--bst-text-primary); margin-bottom: 0.5rem; font-family: 'League Spartan', sans-serif;">450+</div>
+          <p class="bst-body-sm">Tickets donated to date</p>
+        </a>
+
+        <!-- Join Item 2 -->
+        <a href="/support/sponsor-a-show" class="bst-card bst-text-center" style="text-decoration: none;">
+          <span class="bst-label">Support</span>
+          <div style="margin: 1rem 0; color: var(--bst-neon-teal);">
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="7"/><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/></svg>
+          </div>
+          <h3 class="bst-heading-sm bst-mb-xs">Sponsor-A-Show</h3>
+          <div style="font-size: 1.5rem; font-weight: 700; color: var(--bst-text-primary); margin-bottom: 0.5rem; font-family: 'League Spartan', sans-serif;">25</div>
+          <p class="bst-body-sm">Local business sponsors</p>
+        </a>
+
+        <!-- Join Item 3 -->
+        <a href="/support/volunteer" class="bst-card bst-text-center" style="text-decoration: none;">
+          <span class="bst-label">Participate</span>
+          <div style="margin: 1rem 0; color: var(--bst-neon-teal);">
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          </div>
+          <h3 class="bst-heading-sm bst-mb-xs">Volunteer</h3>
+          <div style="font-size: 1.5rem; font-weight: 700; color: var(--bst-text-primary); margin-bottom: 0.5rem; font-family: 'League Spartan', sans-serif;">2,000</div>
+          <p class="bst-body-sm">Hours donated annually</p>
+        </a>
+
+        <!-- Join Item 4 -->
+        <a href="/support/adopt-a-seat" class="bst-card bst-text-center" style="text-decoration: none;">
+          <span class="bst-label">Legacy</span>
+          <div style="margin: 1rem 0; color: var(--bst-neon-teal);">
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+          </div>
+          <h3 class="bst-heading-sm bst-mb-xs">Adopt-A-Seat</h3>
+          <div style="font-size: 1.5rem; font-weight: 700; color: var(--bst-text-primary); margin-bottom: 0.5rem; font-family: 'League Spartan', sans-serif;">110</div>
+          <p class="bst-body-sm">Seats adopted to date</p>
+        </a>
+      </div>
+    </section>
+
+    <!-- FAQ & Policies Section -->
+    <section class="bst-section">
+      <div class="bst-grid bst-grid-2">
+        
+        <!-- Left Column: FAQ -->
+        <div>
+          <h2 class="bst-heading-lg bst-mb-lg" style="border-bottom: 2px solid var(--bst-neon-teal); padding-bottom: 0.5rem; display: inline-block;">Frequently Asked Questions</h2>
+          
+          <div class="bst-card bst-mb-sm">
+            <h3 class="bst-heading-sm bst-mb-xs">How do I purchase tickets?</h3>
+            <p class="bst-body-sm">All tickets are sold through our Ludus ticketing system online or at the box office.</p>
+          </div>
+          
+          <div class="bst-card bst-mb-sm">
+            <h3 class="bst-heading-sm bst-mb-xs">Is the theater wheelchair accessible?</h3>
+            <p class="bst-body-sm">Yes, we are fully accessible with wheelchair seating and assistive listening devices available.</p>
+          </div>
+          
+          <div class="bst-card bst-mb-sm">
+            <h3 class="bst-heading-sm bst-mb-xs">Do you offer group rates?</h3>
+            <p class="bst-body-sm">Groups of 10 or more qualify for special pricing. Contact the box office directly.</p>
+          </div>
+        </div>
+
+        <!-- Right Column: Policies -->
+        <div>
+          <h2 class="bst-heading-lg bst-mb-lg" style="border-bottom: 2px solid var(--bst-neon-teal); padding-bottom: 0.5rem; display: inline-block;">Theater Policies</h2>
+          
+          <div class="bst-card bst-mb-sm">
+            <h3 class="bst-heading-sm bst-mb-xs">Late Seating Policy</h3>
+            <p class="bst-body-sm">Latecomers will be seated at the discretion of the House Manager during an appropriate break in the performance.</p>
+          </div>
+          
+          <div class="bst-card bst-mb-sm">
+            <h3 class="bst-heading-sm bst-mb-xs">Refunds & Exchanges</h3>
+            <p class="bst-body-sm">All sales are final. Exchanges can be made for another performance of the same show with 24 hours notice.</p>
+          </div>
+          
+          <div class="bst-card bst-mb-sm">
+            <h3 class="bst-heading-sm bst-mb-xs">Outside Food & Drink</h3>
+            <p class="bst-body-sm">Outside food and beverages are not permitted inside the venue. Concessions are available in the lobby.</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </div>
+
+</body>
+</html>

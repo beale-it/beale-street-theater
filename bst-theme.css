@@ -426,6 +426,17 @@ body {
 .bst-mt-lg { margin-top: var(--spacing-lg); }
 .bst-mt-xl { margin-top: var(--spacing-xl); }
 
+/* ─── Transparent Overrides ─────────────────────── */
+.bst-bg-transparent {
+  background-color: transparent !important;
+}
+
+.bst-bg-transparent .bst-section,
+.bst-bg-transparent .bst-hero,
+.bst-bg-transparent .bst-trust-blocks {
+  background-color: transparent !important;
+}
+
 /* ─── Special Components ────────────────────────── */
 .bst-hero {
   padding: 5rem 1.5rem;

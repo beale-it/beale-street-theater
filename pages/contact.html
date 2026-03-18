@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact & Plan Your Visit - Beale Street Theater</title>
+  <link rel="stylesheet" href="../bst-theme.css">
+</head>
+<body>
+
+  <!-- 
+    DUDA HTML WIDGET CODE BELOW
+    Paste this block into the HTML tab of the Duda custom widget
+  -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ContactPage",
+    "name": "Contact Beale Street Theater",
+    "description": "Contact the Beale Street Theater box office, get directions, and plan your visit.",
+    "url": "https://bealestreettheater.com/contact"
+  }
+  </script>
+
+  <div class="bst-contact-widget bst-bg-transparent">
+    
+    <!-- Hero / Intro -->
+    <section class="bst-section" style="padding-bottom: 2rem;">
+      <div class="bst-section-header bst-text-center">
+        <span class="bst-label bst-mb-sm" style="display: block;">Get In Touch</span>
+        <h1 class="bst-heading-xl bst-mb-xs">Contact Beale Street Theater</h1>
+        <p class="bst-body-lg" style="max-width: 800px; margin: 0 auto;">
+          We’d love to hear from you. Have a question about an upcoming show, ticketing, or ways to get involved? Drop us a line.
+        </p>
+      </div>
+    </section>
+
+    <!-- Main Contact & Visit Info -->
+    <section class="bst-section" style="padding-top: 0;">
+      <div class="bst-grid bst-grid-2" style="gap: 4rem; align-items: start;">
+        
+        <!-- Left: Contact Form -->
+        <div class="bst-card">
+          <h2 class="bst-heading-md bst-mb-md">Send us a message</h2>
+          
+          <form action="#" method="POST" style="display: flex; flex-direction: column; gap: 1rem;">
+            <div>
+              <label for="name" class="bst-label" style="display: block; margin-bottom: 0.25rem;">Name</label>
+              <input type="text" id="name" name="name" required style="width: 100%; padding: 0.75rem; background-color: rgba(255,255,255,0.05); border: 1px solid var(--bst-border-teal-transparent); color: var(--bst-text-primary); border-radius: 4px; font-family: var(--font-body);">
+            </div>
+            
+            <div>
+              <label for="email" class="bst-label" style="display: block; margin-bottom: 0.25rem;">Email Address</label>
+              <input type="email" id="email" name="email" required style="width: 100%; padding: 0.75rem; background-color: rgba(255,255,255,0.05); border: 1px solid var(--bst-border-teal-transparent); color: var(--bst-text-primary); border-radius: 4px; font-family: var(--font-body);">
+            </div>
+            
+            <div>
+              <label for="subject" class="bst-label" style="display: block; margin-bottom: 0.25rem;">Subject</label>
+              <select id="subject" name="subject" style="width: 100%; padding: 0.75rem; background-color: #1a1d21; border: 1px solid var(--bst-border-teal-transparent); color: var(--bst-text-primary); border-radius: 4px; font-family: var(--font-body);">
+                <option value="general">General Inquiry</option>
+                <option value="tickets">Ticketing & Box Office</option>
+                <option value="rentals">Venue Rentals</option>
+                <option value="volunteer">Volunteering</option>
+              </select>
+            </div>
+            
+            <div>
+              <label for="message" class="bst-label" style="display: block; margin-bottom: 0.25rem;">Message</label>
+              <textarea id="message" name="message" rows="5" required style="width: 100%; padding: 0.75rem; background-color: rgba(255,255,255,0.05); border: 1px solid var(--bst-border-teal-transparent); color: var(--bst-text-primary); border-radius: 4px; font-family: var(--font-body); resize: vertical;"></textarea>
+            </div>
+            
+            <button type="submit" class="bst-btn bst-btn-primary bst-btn-md" style="align-self: flex-start; margin-top: 0.5rem;">Send Message</button>
+          </form>
+        </div>
+
+        <!-- Right: Plan Your Visit -->
+        <div>
+          <h2 class="bst-heading-lg bst-mb-lg" style="border-bottom: 2px solid var(--bst-neon-teal); padding-bottom: 0.5rem; display: inline-block;">Plan Your Visit</h2>
+          
+          <div class="bst-mb-lg">
+            <h3 class="bst-heading-sm bst-mb-xs" style="display: flex; align-items: center; gap: 0.5rem;">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--bst-neon-teal)" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+              Location & Contact
+            </h3>
+            <p class="bst-body-sm">
+              302 E Beale St<br>
+              Kingman, AZ 86401<br><br>
+              <a href="tel:9282285817" style="color: var(--bst-neon-teal); text-decoration: none;">(928) 228-5817</a><br>
+              <a href="mailto:info@bealestreettheater.com" style="color: var(--bst-neon-teal); text-decoration: none;">info@bealestreettheater.com</a>
+            </p>
+          </div>
+          
+          <div class="bst-mb-lg">
+            <h3 class="bst-heading-sm bst-mb-xs" style="display: flex; align-items: center; gap: 0.5rem;">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--bst-neon-teal)" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+              Box Office Hours
+            </h3>
+            <p class="bst-body-sm">
+              Thursday and Friday: 10:00 AM - 6:00 PM<br>
+              And 1 hour prior to any scheduled performance.
+            </p>
+          </div>
+
+          <div class="bst-mb-lg">
+            <h3 class="bst-heading-sm bst-mb-xs" style="display: flex; align-items: center; gap: 0.5rem;">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--bst-neon-teal)" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+              Parking
+            </h3>
+            <p class="bst-body-sm">
+              Free street parking is available along Beale St, and there is an on-site parking lot adjacent to the theater.
+            </p>
+          </div>
+
+          <div>
+            <h3 class="bst-heading-sm bst-mb-xs" style="display: flex; align-items: center; gap: 0.5rem;">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--bst-neon-teal)" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>
+              Accessibility
+            </h3>
+            <p class="bst-body-sm">
+              The building, including entrances, restrooms, lounge, and backstage areas are all accessible with ramps or flat surfaces. Seating marked with a wheelchair icon is reserved for patrons in wheelchairs or walkers with seats.
+            </p>
+          </div>
+
+        </div>
+        
+      </div>
+    </section>
+
+  </div>
+
+</body>
+</html>

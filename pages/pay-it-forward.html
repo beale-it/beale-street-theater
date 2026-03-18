@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pay It Forward Tickets - Beale Street Theater</title>
+  <link rel="stylesheet" href="../bst-theme.css">
+  <style>
+    .bst-support-widget .bst-hero-content {
+      display: flex;
+      flex-direction: row-reverse;
+      gap: 3rem;
+      align-items: center;
+    }
+    .bst-support-widget .hero-text-wrapper,
+    .bst-support-widget .hero-image-wrapper {
+      flex: 1;
+    }
+    @media (max-width: 768px) {
+      .bst-support-widget .bst-hero-content {
+        flex-direction: column;
+        text-align: center;
+      }
+      .bst-support-widget .trust-block {
+        justify-content: center;
+      }
+    }
+    .bst-support-widget .bst-trust-blocks {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      margin-bottom: 2.5rem;
+      background-color: var(--bst-stage-black);
+      padding: 1.5rem;
+      border-radius: var(--bst-curve);
+      border: 2px solid var(--bst-border-teal-transparent);
+      border-left: none;
+      box-shadow: var(--bst-shadow-right);
+    }
+    .bst-support-widget .trust-block {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+    .bst-support-widget .trust-icon {
+      color: var(--bst-neon-teal);
+      font-weight: bold;
+      font-size: 1.25rem;
+    }
+  </style>
+</head>
+<body>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "DonateAction",
+    "name": "Pay It Forward Tickets",
+    "description": "Donate unused tickets to help underserved youth and families experience live theater.",
+    "recipient": {
+      "@type": "Organization",
+      "name": "Beale Street Theater",
+      "url": "https://bealestreettheater.com"
+    }
+  }
+  </script>
+
+  <div class="bst-support-widget" role="region" aria-label="Pay It Forward Support Page">
+    <section class="bst-hero" aria-labelledby="hero-title">
+      <div class="bst-hero-content">
+        <div class="hero-text-wrapper" tabindex="0">
+          <h1 id="hero-title" class="bst-heading-xl bst-mb-md">Pay It Forward Tickets</h1>
+          
+          <p class="bst-body-lg bst-mb-sm" style="font-size: 1.15rem; color: var(--bst-text-primary); font-weight: 600;">
+            Making Live Theater Accessible to All
+          </p>
+          
+          <p class="bst-body bst-mb-lg" style="font-size: 1.15rem;">
+            Donate unused tickets to make live theater accessible to underserved youth and families. The Pay-It-Forward Ticket Donation Program at Beale Street Theater allows you to donate unused tickets, making live theater accessible to underserved youth and families. By donating tickets, you will share the joy of live performances with those who might not otherwise have the chance to attend. You or your business can get involved by purchasing tickets to benefit local families. If you need to donate unused tickets, contact the theater to arrange for ticket donations.
+          </p>
+          
+          <div class="bst-trust-blocks" role="list" aria-label="Benefits">
+            <div class="trust-block" role="listitem">
+              <span class="trust-icon" aria-hidden="true">✓</span>
+              <span class="bst-body" style="font-size: 1.15rem;">Tax benefits</span>
+            </div>
+            <div class="trust-block" role="listitem">
+              <span class="trust-icon" aria-hidden="true">✓</span>
+              <span class="bst-body" style="font-size: 1.15rem;">Community impact</span>
+            </div>
+            <div class="trust-block" role="listitem">
+              <span class="trust-icon" aria-hidden="true">✓</span>
+              <span class="bst-body" style="font-size: 1.15rem;">Support underserved families</span>
+            </div>
+            <div class="trust-block" role="listitem">
+              <span class="trust-icon" aria-hidden="true">✓</span>
+              <span class="bst-body" style="font-size: 1.15rem;">Business recognition</span>
+            </div>
+          </div>
+
+          <div class="hero-action">
+            <a href="/support/donate-tickets" class="bst-btn bst-btn-primary bst-btn-lg" role="button" aria-label="Donate unused tickets">
+              Donate Tickets
+            </a>
+          </div>
+        </div>
+        
+        <div class="hero-image-wrapper">
+          <img src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Joyful family enjoying live theater" class="bst-card-image" style="height: auto; aspect-ratio: 4/3; margin-bottom: 0;" loading="lazy" />
+        </div>
+      </div>
+    </section>
+  </div>
+
+</body>
+</html>
