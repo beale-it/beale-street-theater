@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Beale Street Theater | Staff Training Modules</title>
+<link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;600;700;800;900&family=Roboto+Mono:wght@400;500&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    /* EXACT NEON MARQUEE PALETTE FROM UPLOAD */
+    --teal-main: #12b5a3;
+    --teal-dark: #10887b;
+    --teal-vibrant: #13b8a6;
+    --stage-black: #0f1415;
+    --slate: #2a2d31;
+    --light-gray: #e1e3e7;
+    --beige: #eeebcc;
+    --white: #ffffff;
+    --pure-black: #000000;
+    
+    /* CATEGORY DOTS */
+    --cat-concert: #d97708; /* Orange */
+    --cat-special: #7c39ed; /* Purple */
+    --cat-community: #be1f5d; /* Magenta */
+    --cat-youth: #12b5a3; /* Teal */
+
+    --font-heading: 'League Spartan', sans-serif;
+    --font-body: 'Roboto', sans-serif;
+    --font-code: 'Roboto Mono', monospace;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: var(--font-body);
+    background: #f4f5f6; /* Subtle backdrop for the screen view */
+    color: var(--stage-black);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* WEB UI - FLOATING ACTION BUTTON */
+  .fab-container {
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+    z-index: 1000;
+  }
+
+  .print-btn {
+    background: var(--teal-main);
+    color: var(--white);
+    border: none;
+    padding: 16px 24px;
+    border-radius: 50px;
+    font-family: var(--font-heading);
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    cursor: pointer;
+    box-shadow: 0 10px 25px rgba(18, 181, 163, 0.4);
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .print-btn:hover {
+    background: var(--teal-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 14px 28px rgba(18, 181, 163, 0.5);
+  }
+
+  /* PAGE STRUCTURE (8.5x11 Aspect Ratio Simulation) */
+  .page {
+    background: var(--white);
+    max-width: 8.5in;
+    margin: 2rem auto;
+    padding: 0.8in;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    position: relative;
+    border-top: 6px solid var(--teal-main);
+  }
+
+  .page-header {
+    border-bottom: 2px solid var(--light-gray);
+    padding-bottom: 20px;
+    margin-bottom: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+
+  .tab-label {
+    font-family: var(--font-code);
+    font-size: 12px;
+    color: var(--teal-dark);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: 600;
+  }
+
+  /* TYPOGRAPHY */
+  h1 {
+    font-family: var(--font-heading);
+    font-size: 48px;
+    font-weight: 900;
+    line-height: 1.1;
+    color: var(--stage-black);
+    margin-bottom: 10px;
+  }
+
+  h2 {
+    font-family: var(--font-heading);
+    font-size: 32px;
+    font-weight: 800;
+    color: var(--stage-black);
+    margin-bottom: 16px;
+  }
+
+  h3 {
+    font-family: var(--font-heading);
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--teal-dark);
+    margin: 30px 0 12px;
+  }
+
+  p { margin-bottom: 16px; font-size: 15px; color: var(--slate); }
+  
+  ul, ol { margin-bottom: 20px; padding-left: 24px; color: var(--slate); font-size: 15px; }
+  li { margin-bottom: 8px; }
+
+  /* CALLOUT BOXES */
+  .callout {
+    background: var(--beige);
+    border-left: 4px solid var(--teal-main);
+    padding: 20px 24px;
+    margin: 24px 0;
+    border-radius: 0 4px 4px 0;
+  }
+
+  .callout strong {
+    color: var(--stage-black);
+    font-family: var(--font-heading);
+    font-size: 16px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 8px;
+  }
+
+  .callout p { margin: 0; color: var(--slate); }
+
+  /* TABLES */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 24px 0;
+  }
+
+  th, td {
+    padding: 14px 16px;
+    text-align: left;
+    border-bottom: 1px solid var(--light-gray);
+  }
+
+  th {
+    font-family: var(--font-heading);
+    text-transform: uppercase;
+    font-size: 13px;
+    letter-spacing: 1px;
+    color: var(--slate);
+    background: #f9fafa;
+  }
+
+  td { font-size: 14px; font-weight: 500; }
+
+  .text-center { text-align: center; }
+  
+  /* DOTS FOR SHOW CATEGORIES */
+  .dot {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    margin-right: 8px;
+  }
+  .dot-concert { background: var(--cat-concert); }
+  .dot-special { background: var(--cat-special); }
+  .dot-community { background: var(--cat-community); }
+  .dot-youth { background: var(--cat-youth); }
+
+  /* COLOR SWATCHES */
+  .color-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-top: 20px;
+  }
+
+  .color-card {
+    border: 1px solid var(--light-gray);
+    border-radius: 8px;
+    overflow: hidden;
+    background: var(--white);
+  }
+
+  .color-swatch { height: 80px; width: 100%; border-bottom: 1px solid var(--light-gray); }
+  .color-details { padding: 12px; }
+  .color-details strong { display: block; font-size: 14px; color: var(--stage-black); font-family: var(--font-heading); }
+  .color-details code { font-size: 12px; color: var(--slate); font-family: var(--font-code); }
+
+  /* BEST PRACTICES VISUALS */
+  .metric-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+    margin: 30px 0;
+  }
+
+  .metric-card {
+    background: #f9fafa;
+    border: 1px solid var(--light-gray);
+    padding: 24px;
+    border-radius: 8px;
+    text-align: center;
+  }
+
+  .metric-card .number {
+    font-family: var(--font-heading);
+    font-size: 48px;
+    font-weight: 900;
+    color: var(--teal-main);
+    line-height: 1;
+    margin-bottom: 8px;
+  }
+
+  .metric-card .label {
+    font-family: var(--font-code);
+    font-size: 12px;
+    color: var(--slate);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 600;
+  }
+
+  .ratio-box {
+    border: 2px dashed var(--teal-main);
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-code);
+    color: var(--teal-dark);
+    font-weight: 600;
+    background: rgba(18, 181, 163, 0.05);
+    margin-bottom: 16px;
+  }
+  
+  .ratio-16-9 { width: 100%; aspect-ratio: 16/9; }
+  .ratio-1-1 { width: 150px; height: 150px; }
+
+  /* PRINT MEDIA QUERIES */
+  @media print {
+    body { background: var(--white); margin: 0; padding: 0; }
+    .fab-container { display: none; }
+    .page {
+      margin: 0;
+      padding: 0.5in;
+      box-shadow: none;
+      border-top: none;
+      page-break-after: always;
+      max-width: 100%;
+    }
+    /* Ensure elements don't break awkwardly across pages */
+    table, .callout, .metric-grid, .color-grid { page-break-inside: avoid; }
+    h2, h3 { page-break-after: avoid; }
+    
+    @page {
+      size: letter;
+      margin: 0.5in;
+    }
+  }
+
+  code.inline {
+    background: var(--light-gray);
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-family: var(--font-code);
+    font-size: 13px;
+    color: var(--stage-black);
+  }
+</style>
+</head>
+<body>
+
+  <!-- PRINT ACTION BUTTON -->
+  <div class="fab-container no-print">
+    <button class="print-btn" onclick="window.print()">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 6 2 18 2 18 9"></polyline><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path><rect x="6" y="14" width="12" height="8"></rect></svg>
+      Print / Save PDF
+    </button>
+  </div>
+
+  <!-- COVER PAGE -->
+  <div class="page">
+    <div style="display: flex; flex-direction: column; justify-content: center; height: 80%; padding-top: 100px;">
+      <div class="tab-label" style="margin-bottom: 20px;">Digital Allies × Beale Street Theater</div>
+      <h1 style="font-size: 64px;">Staff Training Binder</h1>
+      <h2 style="color: var(--teal-main); font-size: 36px; margin-bottom: 40px;">Website Operations 2026</h2>
+      
+      <div style="border-left: 4px solid var(--slate); padding-left: 24px; margin-top: 60px;">
+        <p style="margin-bottom: 4px;"><strong>PREPARED FOR:</strong></p>
+        <p style="color: var(--stage-black); font-size: 18px;">Kristina Michelson, Executive Director | Beale Street Theater</p>
+        
+        <p style="margin-bottom: 4px; margin-top: 24px;"><strong>PREPARED BY:</strong></p>
+        <p style="color: var(--stage-black); font-size: 18px;">Anthony Cassella, Web Design & IT Consultant | Digital Allies</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- TAB 1 & 2: BRAND & NAMING -->
+  <div class="page">
+    <div class="page-header">
+      <h2>1. Brand Identity</h2>
+      <div class="tab-label"> Module 01</div>
+    </div>
+    
+    <p>Welcome to the Beale Street Theater Digital Playbook. This document is your source of truth for keeping the BST digital presence sharp, fast, and consistent. It is designed for print and quick desk reference.</p>
+    
+    <h3>The Color System (Neon Marquee)</h3>
+    <p>Design Philosophy: Dark elegance meets analog warmth. These are the exact hex codes required for all web and print collateral moving forward.</p>
+    
+    <div class="color-grid">
+      <div class="color-card">
+        <div class="color-swatch" style="background: #12b5a3;"></div>
+        <div class="color-details"><strong>Primary Teal</strong><code>#12b5a3</code></div>
+      </div>
+      <div class="color-card">
+        <div class="color-swatch" style="background: #10887b;"></div>
+        <div class="color-details"><strong>Dark Teal</strong><code>#10887b</code></div>
+      </div>
+      <div class="color-card">
+        <div class="color-swatch" style="background: #0f1415;"></div>
+        <div class="color-details"><strong>Stage Black</strong><code>#0f1415</code></div>
+      </div>
+      <div class="color-card">
+        <div class="color-swatch" style="background: #2a2d31;"></div>
+        <div class="color-details"><strong>Slate</strong><code>#2a2d31</code></div>
+      </div>
+      <div class="color-card">
+        <div class="color-swatch" style="background: #e1e3e7;"></div>
+        <div class="color-details"><strong>Light Gray</strong><code>#e1e3e7</code></div>
+      </div>
+      <div class="color-card">
+        <div class="color-swatch" style="background: #eeebcc;"></div>
+        <div class="color-details"><strong>Warm Beige</strong><code>#eeebcc</code></div>
+      </div>
+    </div>
+
+    <p style="margin-top: 20px;"><em>Developer Note:</em> Standard border-radius applied to major containers is <code>10px right, 0px left</code> to create the signature BST offset curve.</p>
+
+    <div class="page-header" style="margin-top: 60px;">
+      <h2>2. Naming Conventions</h2>
+      <div class="tab-label"> Module 02</div>
+    </div>
+    
+    <div class="callout">
+      <strong>The Golden Rule of File Naming</strong>
+      <p>Use lowercase only. Use hyphens instead of spaces. Never use underscores. If the file name doesn't tell you what it is, what year it's for, and its version—rename it before saving.</p>
+    </div>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Asset Type</th>
+          <th>Example Name</th>
+          <th>Format</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Web Poster</td>
+          <td><code class="inline">bst-poster-astral-mixtape-2026-v1.webp</code></td>
+          <td>WebP / JPG</td>
+        </tr>
+        <tr>
+          <td>Gallery Photo</td>
+          <td><code class="inline">bst-gallery-earnest-2026-01.webp</code></td>
+          <td>WebP / JPG</td>
+        </tr>
+        <tr>
+          <td>Schema File</td>
+          <td><code class="inline">bst-schema-earnest-2026.json</code></td>
+          <td>JSON</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- TAB 3 & 4: DRIVE & SHOWS -->
+  <div class="page">
+    <div class="page-header">
+      <h2>3. Shared Drive Structure</h2>
+      <div class="tab-label"> Module 03</div>
+    </div>
+    
+    <p>The centralized Google Drive ensures no one is searching for assets in email threads. Keep all final deliverables organized in these root folders.</p>
+
+    <ul style="column-count: 2; column-gap: 40px;">
+      <li><strong>01_brand</strong> - Logos, visual identity</li>
+      <li><strong>02_website</strong> - Copy, SOPs, components</li>
+      <li><strong>03_shows</strong> - Posters, galleries, web assets</li>
+      <li><strong>04_youth-theater</strong> - Youth camp assets</li>
+      <li><strong>05_workshops</strong> - Educational files</li>
+      <li><strong>06_support</strong> - Donation campaign assets</li>
+      <li><strong>07_blog</strong> - Drafts, images, files</li>
+      <li><strong>08_schema</strong> - JSON-LD for SEO</li>
+      <li><strong>09_print</strong> - Large print/PDF files</li>
+      <li><strong>10_archived</strong> - Past seasons</li>
+    </ul>
+
+    <div class="page-header" style="margin-top: 60px;">
+      <h2>4. Show Collections (2026 Season)</h2>
+      <div class="tab-label"> Module 04</div>
+    </div>
+    
+    <p>We use Dynamic Pages to streamline show creation. Treat the main Collection Database in the CMS as the definitive source of truth. Match the <code class="inline">slug</code> exactly across your image files, URLs, and Ludus ticketing.</p>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Show Title</th>
+          <th>Category</th>
+          <th>Dates</th>
+          <th class="text-center">Pricing</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Chronicles of the Highwaymen</td>
+          <td><span class="dot dot-concert"></span> Concert</td>
+          <td>Apr 10</td>
+          <td class="text-center">$40 - $35 - $25</td>
+        </tr>
+        <tr>
+          <td>Forever Everly</td>
+          <td><span class="dot dot-concert"></span> Concert</td>
+          <td>Apr 11</td>
+          <td class="text-center">$35 - $25 - $15</td>
+        </tr>
+        <tr>
+          <td>The Dreamboats</td>
+          <td><span class="dot dot-concert"></span> Concert</td>
+          <td>Apr 14</td>
+          <td class="text-center">$35 - $25 - $20</td>
+        </tr>
+        <tr>
+          <td>Kingman Divas</td>
+          <td><span class="dot dot-special"></span> Special</td>
+          <td>Apr 17</td>
+          <td class="text-center">$25 - $20 - $15</td>
+        </tr>
+        <tr>
+          <td>Spring Youth Concert Band</td>
+          <td><span class="dot dot-youth"></span> Youth</td>
+          <td>Apr 25</td>
+          <td class="text-center">$12 - $8 - $5</td>
+        </tr>
+        <tr>
+          <td>Gnoss</td>
+          <td><span class="dot dot-concert"></span> Concert</td>
+          <td>Apr 30</td>
+          <td class="text-center">$35 - $25 - $15</td>
+        </tr>
+        <tr>
+          <td>Importance of Being Earnest</td>
+          <td><span class="dot dot-community"></span> Community</td>
+          <td>May 8 - 23</td>
+          <td class="text-center">$35 - $25 - $15</td>
+        </tr>
+        <tr>
+          <td>"Psychic" Comedian Peter Antoniou</td>
+          <td><span class="dot dot-special"></span> Special</td>
+          <td>May 29 - 30</td>
+          <td class="text-center">—</td>
+        </tr>
+        <tr>
+          <td>Wind in the Willows</td>
+          <td><span class="dot dot-youth"></span> Youth</td>
+          <td>Jun 12 - 20</td>
+          <td class="text-center">—</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- TAB 5 & 6: PLATFORMS & SEO -->
+  <div class="page">
+    <div class="page-header">
+      <h2>5. Platform Ecosystem</h2>
+      <div class="tab-label"> Module 05</div>
+    </div>
+    
+    <p>Beale Street Theater operates via an integrated digital ecosystem. Understand which platform does what so you know where to go when an update is needed.</p>
+
+    <ul>
+      <li><strong>my.digitalallies.net:</strong> The Digital Command Center. Log in here to edit pages, update SEO fields, manage collections, and publish the site (powered by the Duda engine).</li>
+      <li><strong>Ludus (bst.ludus.com):</strong> The Ticketing Engine. All box office, seat selection, and checkout happens here.</li>
+      <li><strong>Google Business Profile (GBP):</strong> Local SEO hub. Syncs every 12 hours. Critical for map pack rankings.</li>
+      <li><strong>GTM / GA4:</strong> Traffic and conversion tracking. Data routes through Tag Manager.</li>
+    </ul>
+
+    <div class="callout">
+      <strong>Box Office & Location Fact-Check</strong>
+      <p>Our official address is <strong>302 E. Beale St, Kingman, AZ 86401</strong>. Box office hours are Thursday - Fiday, 10 AM - 6 PM, closed Sunday-Wednesday outside of scheduled programming. Brand Portal: <code class="inline">beale-it.github.io/beale-street-theater</code></p>
+    </div>
+
+    <div class="page-header" style="margin-top: 60px;">
+      <h2>6. SEO & CMS Workflow</h2>
+      <div class="tab-label"> Module 06 & 07</div>
+    </div>
+    
+    <h3>The 5-Step SEO Workflow</h3>
+    <ol>
+      <li><strong>Clean Page URL/Item :</strong> Use accurate, hyphenated page names (e.g., <code class="inline">/shows/chronicles-of-the-highwaymen</code>).</li>
+      <li><strong>Meta Tags:</strong> Complete the SEO Title and Description for every new page in the Digital Allies command center.</li>
+      <li><strong>Alt Text:</strong> Add descriptive alt text (e.g., <em>"Cast of The Importance of Being Earnest performing on stage at Beale Street Theater in Kingman Arizona."</em>)</li>
+      <li><strong>Structured Data:</strong> Ensure JSON-LD Event Schema is attached to every show page.</li>
+      <li><strong>Social Previews:</strong> Confirm the OG image is set so links look great on Facebook.</li>
+    </ol>
+
+    <h3>The Waterfall Effect (Publishing)</h3>
+    <p>Always edit on the Desktop view first. Changes cascade down to tablet and mobile. Mobile-only tweaks do not affect desktop, but desktop changes will overwrite mobile if done incorrectly. Click <strong>Republish</strong> ONLY after all metadata and responsive views are confirmed.</p>
+  </div>
+
+  <!-- TAB 8 & 9: BEST PRACTICES & CHECKLIST -->
+  <div class="page">
+    <div class="page-header">
+      <h2>8. Media Best Practices</h2>
+      <div class="tab-label"> Module 08</div>
+    </div>
+    
+    <p>Heavy, unoptimized files delay the curtain rising. Large images kill page speed and trigger high bounce rates. Optimize every asset to keep the digital stage lightning fast.</p>
+
+    <div class="metric-grid">
+      <div class="metric-card">
+        <div class="number">200<span style="font-size: 24px;">KB</span></div>
+        <div class="label">Maximum Target Weight</div>
+      </div>
+      <div class="metric-card">
+        <div class="number">20<span style="font-size: 24px;">MB</span></div>
+        <div class="label">Absolute Page Ceiling</div>
+      </div>
+    </div>
+
+    <h3>The Universal Aspect Ratios</h3>
+    <div style="display: flex; gap: 20px; align-items: flex-end; margin-bottom: 20px;">
+      <div style="flex: 2;">
+        <div class="ratio-box ratio-16-9">16:9 Main Stage (1920px wide)</div>
+        <p style="font-size: 13px; text-align: center;">Hero Images & Presentations</p>
+      </div>
+      <div style="flex: 1; display: flex; flex-direction: column; align-items: center;">
+        <div class="ratio-box ratio-1-1">1:1 Square</div>
+        <p style="font-size: 13px; text-align: center;">Staff Avatars & Thumbs</p>
+      </div>
+    </div>
+
+    <table style="margin-top: 30px;">
+      <thead>
+        <tr>
+          <th>Format</th>
+          <th>Profile</th>
+          <th>Ideal Theater Use Case</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>WebP</strong></td>
+          <td>Lossy / Lossless (26% smaller)</td>
+          <td>Universal default for site imagery.</td>
+        </tr>
+        <tr>
+          <td><strong>PNG</strong></td>
+          <td>Lossless (Heavy)</td>
+          <td>Only when transparency is strictly required.</td>
+        </tr>
+        <tr>
+          <td><strong>SVG</strong></td>
+          <td>Vector (Mathematical)</td>
+          <td>Logos, flat interface graphics, icons.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="page-header" style="margin-top: 60px;">
+      <h2>9. Staff Checklists</h2>
+      <div class="tab-label"> Module 09</div>
+    </div>
+    
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px;">
+      <div>
+        <h3>Pre-Publish Routine</h3>
+        <ul style="list-style-type: none; padding-left: 0;">
+          <li>[ ] File renamed (lowercase, hyphens).</li>
+          <li>[ ] Image compressed under 200KB.</li>
+          <li>[ ] Asset uses correct slug and year.</li>
+          <li>[ ] Descriptive Alt Text applied.</li>
+          <li>[ ] SEO Title / Meta Description verified.</li>
+          <li>[ ] Mobile & let views checked.</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Monthly Health Check</h3>
+        <ul style="list-style-type: none; padding-left: 0;">
+          <li>[ ] Upload 5+ photos to Google Business.</li>
+          <li>[ ] Respond to all Google Reviews.</li>
+          <li>[ ] Review GA4 traffic via GTM.</li>
+          <li>[ ] Archive outdated seasonal files.</li>
+          <li>[ ] Run a broken link scan on site.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
