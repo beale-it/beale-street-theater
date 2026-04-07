@@ -134,45 +134,20 @@
                             <i class="fas fa-download text-3xl"></i>
                         </div>
                     </div>
-                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                        <!-- Primary Logo -->
-                        <div class="bg-white p-8 rounded-2xl flex flex-col items-center justify-center text-center border-2 border-slate-200">
-                            <div class="w-full h-32 bg-slate-50 rounded-xl flex items-center justify-center mb-4 p-4 border border-slate-100">
-                                <i class="fas fa-palette text-5xl text-teal-600 opacity-50"></i>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="bg-slate-900 p-8 rounded-2xl flex flex-col items-center justify-center text-center border-2 border-dashed border-teal-500/30">
+                            <div class="w-20 h-20 bg-teal-500/10 rounded-full flex items-center justify-center mb-4">
+                                <i class="fas fa-image text-3xl text-teal-500"></i>
                             </div>
-                            <h3 class="text-slate-900 font-bold mb-2">Primary Logo</h3>
-                            <p class="text-xs text-slate-500 mb-4 px-2">Multi-color vector for light backgrounds</p>
-                            <a href="https://pnfqadowuowlqsznbhma.supabase.co/storage/v1/object/public/bst_media_library_backup_2026/bst_digital_logo_variations/3D.png" target="_blank" class="px-4 py-2 bg-teal-50 text-teal-600 text-sm font-bold rounded-lg hover:bg-teal-100 transition-colors">Download via Drive</a>
+                            <h3 class="text-white font-bold mb-2">Primary Logo (Dark Background)</h3>
+                            <button class="px-4 py-2 bg-slate-800 text-slate-500 text-sm font-bold rounded-lg cursor-not-allowed">Download Logo</button>
                         </div>
-
-                        <!-- Neon Logo -->
-                        <div class="bg-slate-900 p-8 rounded-2xl flex flex-col items-center justify-center text-center border-2 border-teal-500/30">
-                            <div class="w-full h-32 bg-black/50 rounded-xl flex items-center justify-center mb-4 p-4">
-                                <i class="fas fa-bolt text-5xl text-yellow-400 opacity-80" style="filter: drop-shadow(0 0 10px rgba(234,179,8,0.5));"></i>
+                        <div class="bg-white p-8 rounded-2xl flex flex-col items-center justify-center text-center border-2 border-dashed border-slate-300">
+                            <div class="w-20 h-20 bg-slate-100 rounded-full flex items-center justify-center mb-4">
+                                <i class="fas fa-image text-3xl text-slate-400"></i>
                             </div>
-                            <h3 class="text-white font-bold mb-2">Neon Retro Logo</h3>
-                            <p class="text-xs text-slate-400 mb-4 px-2">Glowing gradient for dark backgrounds</p>
-                            <a href="https://pnfqadowuowlqsznbhma.supabase.co/storage/v1/object/public/bst_media_library_backup_2026/bst_digital_logo_variations/flat_color.png" target="_blank" class="px-4 py-2 bg-teal-500/20 text-teal-400 text-sm font-bold rounded-lg hover:bg-teal-500/30 transition-colors">Download via Drive</a>
-                        </div>
-
-                        <!-- Favicon -->
-                        <div class="bg-slate-900 p-8 rounded-2xl flex flex-col items-center justify-center text-center border-2 border-teal-500/30">
-                            <div class="w-full h-32 bg-black/50 rounded-xl flex items-center justify-center mb-4 p-4">
-                                <i class="fas fa-bolt text-5xl text-yellow-400 opacity-80" style="filter: drop-shadow(0 0 10px rgba(234,179,8,0.5));"></i>
-                            </div>
-                            <h3 class="text-white font-bold mb-2">Favicon</h3>
-                            <p class="text-xs text-slate-400 mb-4 px-2">Mini Version of our Primary Logo</p>
-                            <a href="https://pnfqadowuowlqsznbhma.supabase.co/storage/v1/object/public/bst_media_library_backup_2026/bst_digital_logo_variations/favicon.png" target="_blank" class="px-4 py-2 bg-teal-500/20 text-teal-400 text-sm font-bold rounded-lg hover:bg-teal-500/30 transition-colors">Download via Drive</a>
-                        </div>
-
-                        <!-- Dark Mode/White Logo -->
-                        <div class="bg-slate-800 p-8 rounded-2xl flex flex-col items-center justify-center text-center border-2 border-slate-700">
-                            <div class="w-full h-32 bg-slate-900 rounded-xl flex items-center justify-center mb-4 p-4 relative">
-                                <i class="fas fa-theater-masks text-5xl text-white opacity-50"></i>
-                            </div>
-                            <h3 class="text-white font-bold mb-2">White Logo Variation</h3>
-                            <p class="text-xs text-slate-400 mb-4 px-2">Solid white outline for transparent use</p>
-                            <a href="https://pnfqadowuowlqsznbhma.supabase.co/storage/v1/object/public/bst_media_library_backup_2026/bst_digital_logo_variations/dark.png" target="_blank" class="px-4 py-2 bg-slate-700 text-slate-300 text-sm font-bold rounded-lg hover:bg-slate-600 transition-colors">Download via Drive</a>
+                            <h3 class="text-slate-900 font-bold mb-2">Primary Logo (Light Background)</h3>
+                            <button class="px-4 py-2 bg-slate-100 text-slate-400 text-sm font-bold rounded-lg cursor-not-allowed">Download Logo</button>
                         </div>
                     </div>
                 </div>
@@ -207,18 +182,7 @@
                         </svg>
                     </div>
                     <p class="text-lg font-semibold text-white">Drag images here or click to browse</p>
-                    <p class="text-sm text-gray-500 mt-2 mb-6">Supports PNG, JPG, WEBP (Auto-optimizes for web speed)</p>
-                    
-                    <div class="flex gap-4 justify-center" onclick="event.stopPropagation()">
-                        <div class="flex flex-col text-left">
-                            <label class="text-xs text-gray-400 mb-1">Max Width (px)</label>
-                            <input type="number" id="opt-width" class="bg-gray-800 text-white rounded px-3 py-2 w-32 border border-gray-700 outline-none focus:border-teal-500" placeholder="Auto">
-                        </div>
-                        <div class="flex flex-col text-left">
-                            <label class="text-xs text-gray-400 mb-1">Max Height (px)</label>
-                            <input type="number" id="opt-height" class="bg-gray-800 text-white rounded px-3 py-2 w-32 border border-gray-700 outline-none focus:border-teal-500" placeholder="Auto">
-                        </div>
-                    </div>
+                    <p class="text-sm text-gray-500 mt-2">Supports PNG, JPG, WEBP (Auto-optimizes for web speed)</p>
                 </div>
             </div>
         </section>
@@ -272,7 +236,7 @@
     </div>
     <div>
       <!-- Replace with your logo image -->
-      <img src="https://pnfqadowuowlqsznbhma.supabase.co/storage/v1/object/public/bst_media_library_backup_2026/bst_digital_logo_variations/3D.png" alt="BST Logo" style="max-width: 400px; width: 100%; filter: brightness(0.9);">
+      <img src="https://images.unsplash.com/photo-1503095396549-807759245b35?w=400" alt="BST Logo" style="max-width: 400px; width: 100%; filter: brightness(0.9);">
     </div>
   </div>
 </section>
@@ -1919,7 +1883,7 @@
                                 <h3 class="text-lg font-bold text-slate-900">Google Drive</h3>
                             </div>
                             <p class="text-sm text-slate-600 mb-4">Access shared folders, media uploads, and collaborative documents.</p>
-                            <a href="https://drive.google.com/drive/u/3/folders/0AAQd0CobemGnUk9PVA" class="text-teal-600 text-sm font-bold hover:underline" target="_blank">Open Drive &rarr;</a>
+                            <a href="#" class="text-teal-600 text-sm font-bold hover:underline">Open Drive &rarr;</a>
                         </div>
                         <!-- Document Library -->
                         <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 hover:border-teal-500 transition-colors cursor-pointer group">
@@ -2048,27 +2012,10 @@
                         const canvas = document.createElement('canvas');
                         const ctx = canvas.getContext('2d');
 
-                        let targetWidth = img.width;
-                        let targetHeight = img.height;
-
-                        const mwInput = document.getElementById('opt-width');
-                        const mhInput = document.getElementById('opt-height');
-                        const maxWidth = mwInput ? parseInt(mwInput.value) : NaN;
-                        const maxHeight = mhInput ? parseInt(mhInput.value) : NaN;
-
-                        if (maxWidth && targetWidth > maxWidth) {
-                            targetHeight = (maxWidth / targetWidth) * targetHeight;
-                            targetWidth = maxWidth;
-                        }
-                        if (maxHeight && targetHeight > maxHeight) {
-                            targetWidth = (maxHeight / targetHeight) * targetWidth;
-                            targetHeight = maxHeight;
-                        }
-
                         // Maintain high quality but optimize size
-                        canvas.width = Math.round(targetWidth);
-                        canvas.height = Math.round(targetHeight);
-                        ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+                        canvas.width = img.width;
+                        canvas.height = img.height;
+                        ctx.drawImage(img, 0, 0);
 
                         // Convert to WebP with 0.8 quality (perfect balance)
                         const webpData = canvas.toDataURL('image/webp', 0.8);
@@ -2079,8 +2026,6 @@
                             originalSize: (file.size / 1024).toFixed(1),
                             optimizedSize: (webpData.length * 0.75 / 1024).toFixed(1),
                             data: webpData,
-                            width: canvas.width,
-                            height: canvas.height,
                             timestamp: new Date().toLocaleDateString()
                         };
 
@@ -2142,7 +2087,6 @@
                             <span class="text-gray-500 line-through">${asset.originalSize} KB</span>
                             <span class="text-teal-500 font-bold">${asset.optimizedSize} KB</span>
                             <span class="bg-teal-900/30 text-teal-400 px-2 py-0.5 rounded">-${Math.round((1 - asset.optimizedSize / asset.originalSize) * 100)}%</span>
-                            ${asset.width ? `<span class="text-gray-400 border border-gray-700 px-1 rounded">${asset.width}x${asset.height}</span>` : ''}
                         </div>
                     </div>
                 `;
@@ -2177,77 +2121,6 @@
             const htmlSnippet = `<img src="${asset.data}" alt="${asset.name}" style="width: 100%; height: auto;">`;
             copyToClipboard(htmlSnippet);
         }
-
-        // Live HTML Editor Logic
-        function initLiveEditor() {
-            document.querySelectorAll('.component-preview').forEach((preview, index) => {
-                if (preview.children.length === 0 || preview.querySelector('.live-editor-container')) return;
-
-                // 1. Wrap the existing content in a secure container
-                const id = 'preview-content-' + index;
-                const originalHtml = preview.innerHTML;
-                preview.innerHTML = ''; // clear out
-
-                const contentWrapper = document.createElement('div');
-                contentWrapper.id = id;
-                contentWrapper.innerHTML = originalHtml;
-                preview.appendChild(contentWrapper);
-
-                // 2. Create Editor Controls
-                const controlDiv = document.createElement('div');
-                controlDiv.className = 'absolute top-2 right-2 flex gap-2 z-50 live-editor-controls';
-                
-                const btn = document.createElement('button');
-                btn.className = 'bg-slate-800 text-white text-xs px-3 py-1.5 rounded shadow hover:bg-slate-700 transition flex items-center gap-2 font-medium';
-                btn.innerHTML = '<i class="fas fa-code"></i> Live Edit';
-                controlDiv.appendChild(btn);
-
-                // 3. Create Editor Panel
-                const editorPanel = document.createElement('div');
-                editorPanel.className = 'live-editor-container bg-slate-900 border-t border-slate-700 hidden mt-4 rounded-b-xl overflow-hidden';
-                
-                const textarea = document.createElement('textarea');
-                textarea.className = 'w-full h-80 bg-slate-900 text-teal-400 p-4 font-mono text-sm focus:outline-none focus:ring-inset focus:ring-2 focus:ring-teal-500 block';
-                textarea.spellcheck = false;
-                
-                // Format the HTML roughly for better editing experience
-                let formattedHtml = originalHtml.replace(/></g, '>\\n<')
-                                                .replace(/(^\\s*\\n)/gm, '')
-                                                .trim();
-                textarea.value = formattedHtml;
-                
-                editorPanel.appendChild(textarea);
-                preview.appendChild(editorPanel);
-                preview.appendChild(controlDiv);
-
-                // 4. Implement Interactions
-                let isEditing = false;
-                btn.onclick = () => {
-                    isEditing = !isEditing;
-                    if (isEditing) {
-                        editorPanel.classList.remove('hidden');
-                        btn.innerHTML = '<i class="fas fa-eye"></i> Hide Editor';
-                        btn.classList.add('bg-teal-600');
-                        btn.classList.replace('hover:bg-slate-700', 'hover:bg-teal-500');
-                        textarea.focus();
-                    } else {
-                        editorPanel.classList.add('hidden');
-                        btn.innerHTML = '<i class="fas fa-code"></i> Live Edit';
-                        btn.classList.remove('bg-teal-600');
-                        btn.classList.replace('hover:bg-teal-500', 'hover:bg-slate-700');
-                    }
-                };
-
-                // Real-time update
-                textarea.oninput = () => {
-                    contentWrapper.innerHTML = textarea.value;
-                };
-            });
-        }
-        
-        // init the editor once the DOM is ready
-        setTimeout(initLiveEditor, 500);
-
     </script>
     <script>
         // Copy Code & SVG Download logic
